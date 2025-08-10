@@ -8,8 +8,8 @@ function createCard() {
   let box = document.createElement("div");
   box.classList.add("custom-div");
 
-  // ON MET LE CONTENU DE L'INPUT
-  box.textContent = input.value;
+  // ON MET LE CONTENU DE L'INPUT ET UN CONTENU PAR DEFAUT SI AUCUNE VALEUR
+  box.textContent = input.value || "Tu n'as rien écris !";
 
   container.append(box);
 
@@ -19,6 +19,13 @@ function createCard() {
 
 // AJOUT DE L'EVENEMENT CLICK SUR LE BOUTON + POUR AJOUTER UNE DIV
 buttonPlus.addEventListener("click", createCard);
+
+// AJOUT DE L'EVENEMENT keydown SUR INPUT POUR AJOUTER UNE DIV A CHAQUE CLICK SUR LA TOUCHE ENTRER
+input.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    createCard();
+  }
+});
 
 // AJOUT DE L'EVENEMENT CLICK SUR LE BOUTON - POUR SUPPRIMER LA DERNIERE DIV
 buttonMinus.addEventListener("click", () => {
