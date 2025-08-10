@@ -51,6 +51,21 @@ h1 {
   margin: 20px;
 }
 
+input {
+  background-color: var(--main-color);
+  width: 500px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-family: var(--main-font);
+}
+
+input:focus {
+  outline: none;
+}
+
 .btn-container {
   display: flex;
   justify-content: center;
